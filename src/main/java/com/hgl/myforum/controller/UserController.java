@@ -56,7 +56,6 @@ public class UserController {
     public ResultResp register(String username,String password){
         ResultResp resp = new ResultResp();
         ResultResp resp = new ResultResp();
-        ResultResp resp = new ResultResp();
         if (StringUtils.isEmpty(username) || StringUtils.isEmpty(password)){
             resp.setCode(1);
             resp.setDesc("用户名和密码不能为空~~");
