@@ -46,12 +46,12 @@ public class UserController {
         return userService.delUserById(userId);
     }
 
-    /**
+    /**//**
      * 用户注册
      * @param username
      * @param password
      * @return
-     */
+     *//*
     @RequestMapping(value = "/register")
     public ResultResp register(String username,String password){
         ResultResp resp = new ResultResp();
@@ -61,6 +61,6 @@ public class UserController {
             return resp;
         }
         return userService.register(username,password);
-    }
+    }*/
 
 }

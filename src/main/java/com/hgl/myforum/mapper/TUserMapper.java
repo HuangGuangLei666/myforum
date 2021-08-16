@@ -1,15 +1,14 @@
 package com.hgl.myforum.mapper;
 
 
+import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.hgl.myforum.entity.TUser;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-public interface TUserMapper {
-    int deleteByPrimaryKey(Integer id);
-
-    int insert(TUser record);
+public interface TUserMapper extends BaseMapper<TUser> {
+    /*int deleteByPrimaryKey(Integer id);
 
     int insertSelective(TUser record);
 
@@ -23,5 +22,5 @@ public interface TUserMapper {
 
     int delUserById(Integer userId);
 
-    int register(@Param("username") String username,@Param("password") String password);
+    int register(@Param("username") String username,@Param("password") String password);*/
 }
