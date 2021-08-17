@@ -14,5 +14,5 @@ public interface IUserService {
 
     ResultResp delUserById(Integer userId);
 
-//    ResultResp register(String username, String password);
+    ResultResp register(String username, String password);
 }

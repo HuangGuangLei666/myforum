@@ -9,6 +9,7 @@ import com.hgl.myforum.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -39,16 +40,20 @@ public class UserServiceImpl implements IUserService {
         return resp;
     }
 
-    /*public ResultResp register(String username, String password) {
+    public ResultResp register(String username, String password) {
         ResultResp resp = new ResultResp();
-        int i = userMapper.register(username,password);
+        TUser tUser = new TUser();
+        tUser.setUsername(username);
+        tUser.setPassword(password);
+        tUser.setCreateTime(new Date());
+        int i = userMapper.insert(tUser);
         if (i < 1){
-            resp.setCode(1);
-            resp.setDesc("注册失败~~");
+            resp.setCode(EnumResp.FAIL.getCode());
+            resp.setDesc(EnumResp.FAIL.getDesc());
             return resp;
         }
-        resp.setCode(0);
-        resp.setDesc("注册成功~~");
+        resp.setCode(EnumResp.SUCCESS.getCode());
+        resp.setDesc(EnumResp.SUCCESS.getDesc());
         return resp;
-    }*/
+    }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hgl.myforum.mapper.TTopicMapper">
-  <resultMap id="BaseResultMap" type="com.hgl.myforum.entity.TTopic">
+  <!--<resultMap id="BaseResultMap" type="com.hgl.myforum.entity.TTopic">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="title" jdbcType="VARCHAR" property="title" />
     <result column="content" jdbcType="VARCHAR" property="content" />
@@ -106,5 +106,5 @@
       create_time = #{createTime,jdbcType=TIMESTAMP},
       user_id = #{userId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
-  </update>
+  </update>-->
 </mapper>

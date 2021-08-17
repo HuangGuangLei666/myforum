@@ -6,7 +6,8 @@ package com.hgl.myforum.common;
  */
 public enum EnumResp {
     SUCCESS(0,"成功"),
-    FAIL(1,"失败");
+    FAIL(1,"失败"),
+    USNAMEPWDNOTNULL(1,"用户名或密码不能为空");
 
     private Integer code;
     private String desc;

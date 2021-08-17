@@ -1,5 +1,6 @@
 package com.hgl.myforum.controller;
 
+import com.hgl.myforum.common.EnumResp;
 import com.hgl.myforum.common.ResultResp;
 import com.hgl.myforum.entity.TUser;
 import com.hgl.myforum.service.IUserService;
@@ -17,7 +18,7 @@ import java.util.List;
 
 /**
  * @author HGL
- * @Date 2020/9/2
+ * @Date 2021/08/17
  */
 @RestController
 @RequestMapping(value = "/user")
@@ -46,21 +47,21 @@ public class UserController {
         return userService.delUserById(userId);
     }
 
-    /**//**
+    /**
      * 用户注册
      * @param username
      * @param password
      * @return
-     *//*
+     */
     @RequestMapping(value = "/register")
     public ResultResp register(String username,String password){
         ResultResp resp = new ResultResp();
         if (StringUtils.isEmpty(username) || StringUtils.isEmpty(password)){
-            resp.setCode(1);
-            resp.setDesc("用户名和密码不能为空~~");
+            resp.setCode(EnumResp.USNAMEPWDNOTNULL.getCode());
+            resp.setDesc(EnumResp.USNAMEPWDNOTNULL.getDesc());
             return resp;
         }
         return userService.register(username,password);
-    }*/
+    }
 
 }
