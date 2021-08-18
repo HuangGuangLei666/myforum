@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Data
 public class TUser {
-    private Integer id;
+    private int id;
 
     private String username;
 

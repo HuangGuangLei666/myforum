@@ -84,7 +84,7 @@
 		</dependency>
 
 		<!-- mybatis-plus begin -->
-		<dependency>
+		<!--<dependency>
 			<groupId>com.baomidou</groupId>
 			<artifactId>mybatisplus-spring-boot-starter</artifactId>
 			<version>1.0.1</version>
@@ -93,7 +93,14 @@
 			<groupId>com.baomidou</groupId>
 			<artifactId>mybatis-plus</artifactId>
 			<version>2.1.2</version>
+		</dependency>-->
+		<!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter -->
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus-boot-starter</artifactId>
+			<version>3.4.3</version>
 		</dependency>
+
 		<!-- mybatis-plus end -->
 
 		<!--读取excel文件-->

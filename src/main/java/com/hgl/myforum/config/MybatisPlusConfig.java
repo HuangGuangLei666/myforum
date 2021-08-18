@@ -1,3 +1,4 @@
+/*
 package com.hgl.myforum.config;
 
 import com.baomidou.mybatisplus.plugins.PaginationInterceptor;
@@ -16,3 +17,4 @@ public class MybatisPlusConfig {
         return paginationInterceptor;
     }
 }
+*/

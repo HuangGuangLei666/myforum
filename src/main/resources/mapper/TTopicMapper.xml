@@ -7,7 +7,7 @@
     <result column="content" jdbcType="VARCHAR" property="content" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="user_id" jdbcType="INTEGER" property="userId" />
-  </resultMap>
+  </resultMap>-->
 
   <resultMap id="BaseResultMapTopicDto" type="com.hgl.myforum.entity.dto.TopicDto">
     <id column="id" jdbcType="INTEGER" property="id" />
@@ -16,7 +16,7 @@
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="username" jdbcType="INTEGER" property="userName" />
   </resultMap>
-  <sql id="Base_Column_List">
+  <!--<sql id="Base_Column_List">
     id, title, content, create_time, user_id
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
@@ -24,7 +24,7 @@
     <include refid="Base_Column_List" />
     from t_topic
     where id = #{id,jdbcType=INTEGER}
-  </select>
+  </select>-->
 
   <select id="getTopicList" resultMap="BaseResultMapTopicDto">
     SELECT
@@ -34,7 +34,7 @@
     LEFT JOIN t_user u ON t.user_id = u.id
   </select>
 
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <!--<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from t_topic
     where id = #{id,jdbcType=INTEGER}
   </delete>

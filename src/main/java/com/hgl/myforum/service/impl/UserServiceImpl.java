@@ -1,6 +1,6 @@
 package com.hgl.myforum.service.impl;
 
-import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.hgl.myforum.common.EnumResp;
 import com.hgl.myforum.common.ResultResp;
 import com.hgl.myforum.entity.TUser;
@@ -24,7 +24,7 @@ public class UserServiceImpl implements IUserService {
 
     public List<TUser> getUserList() {
 //        return userMapper.getUserList();
-        return userMapper.selectList(new EntityWrapper<TUser>());
+        return userMapper.selectList(new QueryWrapper<TUser>());
     }
 
     public ResultResp delUserById(Integer userId) {

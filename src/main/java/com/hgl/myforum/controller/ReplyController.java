@@ -27,10 +27,10 @@ public class ReplyController {
      * @param response
      * @return
      */
-    /*@RequestMapping(value = "/getReplyList")
+    @RequestMapping(value = "/getReplyList")
     public List<ReplyDto> getReplyList(HttpServletResponse response){
         response.setHeader("Access-Control-Allow-Origin", "*");
         response.setHeader("Cache-Control","no-cache");
         return replyService.getReplyList();
-    }*/
+    }
 }
