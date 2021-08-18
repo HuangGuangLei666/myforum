@@ -14,4 +14,6 @@ public interface ITopicService {
     List<TopicDto> getTopicList();
 
     void exportExcel(HttpServletResponse response);
+
+    void regularPosting();
 }
