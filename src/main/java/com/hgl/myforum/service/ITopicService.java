@@ -15,5 +15,5 @@ public interface ITopicService {
 
     void exportExcel(HttpServletResponse response);
 
-    void regularPosting();
+    void regularPosting() throws Exception;
 }

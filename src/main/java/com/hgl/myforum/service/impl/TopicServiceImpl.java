@@ -5,6 +5,7 @@ import com.hgl.myforum.entity.dto.TopicDto;
 import com.hgl.myforum.mapper.TTopicMapper;
 import com.hgl.myforum.service.ITopicService;
 import com.hgl.myforum.utils.ExportUtil;
+import com.hgl.myforum.utils.RedisClient;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.CellStyle;
@@ -25,8 +26,9 @@ public class TopicServiceImpl implements ITopicService {
 
     @Autowired
     private TTopicMapper topicMapper;
+    @Autowired
+    private RedisClient redisClient;
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-    private static int count = 1;
 
     public List<TopicDto> getTopicList() {
         return topicMapper.getTopicList();
@@ -65,9 +67,11 @@ public class TopicServiceImpl implements ITopicService {
      * 频率：每天12点到14点、17点到19点，每隔10分钟执行一次
      */
     @Override
-    public void regularPosting() {
+    public void regularPosting() throws Exception {
         System.out.println("============开始发帖==============");
         System.out.println("发帖时间："+sdf.format(new Date()));
+        Long count = redisClient.count("count");
+        System.out.println("count缓存的值为：["+count+"]");
         TTopic tTopic = new TTopic();
         tTopic.setUserId(15);
         tTopic.setContent("就在刚刚，我发布了我的第"+count+"个帖");
@@ -75,10 +79,9 @@ public class TopicServiceImpl implements ITopicService {
         tTopic.setTitle("这是我第"+count+"个帖的标题");
         int insert = topicMapper.insert(tTopic);
         if (insert < 1){
-            System.out.println("============第"+count+"个发布失败了============");
+            System.out.println("第"+count+"个发布失败了~~~");
         }else {
-            System.out.println("============第"+count+"个发布成功了============");
-            count++;
+            System.out.println("第"+count+"个发布成功了~~~");
         }
     }
 }
